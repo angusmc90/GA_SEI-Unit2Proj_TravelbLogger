@@ -1,3 +1,22 @@
 const mongoose = require('mongoose');
 
-// Create your User Model
+const bloggerUserSchema = new mongoose.Schema({
+    // Creating googleID first
+    // There won't be any log-ins without OAuth
+    name: String,
+    googleId: {
+        type: String,
+        required: true
+    },
+    email: String,
+    avatar: String,
+    hometown: String,
+    faveTrip: String,
+    faveExcursion: String,
+    bucketList: [String]
+}, {
+    timstamps: true
+});
+
+
+module.exports = mongoose.model('bloggerUser', bloggerUserSchema)
