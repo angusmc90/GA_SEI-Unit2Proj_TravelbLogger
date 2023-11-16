@@ -1,33 +1,35 @@
 <%- include('../partials/header') %>
-<%- include('../partials/nav') %>
 
-<section id="feedPg">
-    <div>
-        <form>
-            <button>Stamp My Passport</button>
-        </form>
-    </div>
-    <div id="tripFeedAll" class="feed">
-        <ticket>
-            <h3 class="ticketTitle">
-                TRIP NAME HERE
-            </h3>
-            <div class="ticketBody">
-                <img src="./images/tickets.png" class="tripPic">
-                <div class="tripPrev">
-                    <div class="tripTaker">
-                        <img src="./images/ferdinand.jpeg" class="pfIcon">
-                        <p>Ferdinand Thee Bull</p>
+<main>
+<%- include('../partials/nav') %>
+    <section id="feedPg">
+        <div>
+            <form>
+                <button>Stamp My Passport</button>
+            </form>
+        </div>
+        <div id="tripFeedAll" class="feed">
+            <ticket>
+                <h3 class="ticketTitle">
+                    TRIP NAME HERE
+                </h3>
+                <div class="ticketBody">
+                    <img src="./images/tickets.png" class="tripPic">
+                    <div class="tripPrev">
+                        <div class="tripTaker">
+                            <img src="./images/ferdinand.jpeg" class="pfIcon">
+                            <p>Ferdinand Thee Bull</p>
+                        </div>
+                        <p>
+                            <span class="tripLength">TRIP START - TRIP END</span><br />
+                            <span class="tripHighlight">I act like I'm an outdoor cat, but really I'm in an indoor cat
+                                and traveling sounds like a nightmare, so I'm only here to stalk.</span>
+                        </p>
                     </div>
-                    <p>
-                        <span class="tripLength">TRIP START - TRIP END</span><br />
-                        <span class="tripHighlight">I act like I'm an outdoor cat, but really I'm in an indoor cat
-                            and traveling sounds like a nightmare, so I'm only here to stalk.</span>
-                    </p>
                 </div>
-            </div>
-        </ticket>
-    </div>
-</section>
+            </ticket>
+        </div>
+    </section>
+</main>
 
 <%- include('../partials/footer') %>
