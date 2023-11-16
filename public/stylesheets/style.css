@@ -1,4 +1,4 @@
-.brand-logo {
+/* .brand-logo {
   margin-left: 15px;
 }
 
@@ -17,4 +17,114 @@
 
 .collection-item form {
   margin-top: -5px;
+} */
+
+body {
+  margin:0;
+  overflow-x:hidden;
+  background-image: url('../images/main-background.jpg');
+  display:flex;
+  width: 100vw;
+  justify-content: space-between;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+section#mktgContainer{
+  max-width: 67%;
+  flex: 3;
+  justify-content: space-evenly;
+  /* the justify content is doing something? come back to later */
+}
+
+section#loginRail{
+  max-width: 33%;
+  flex: 1;
+  background-color: pink;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#mktgSpace {
+  min-width: 75%;
+  max-width: 550px;
+}
+
+ticket {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(14, 151, 255, 0.5);
+  min-width:100%;
+  max-width: 550px;
+  padding: 15px;
+  margin:20px;
+}
+
+ticket h3{
+  margin:0;
+  padding: 5px 2px;
+}
+
+div.ticketBody{
+  display:flex;
+  flex-direction: row;
+}
+
+.tripPrev{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding:5px 15px;
+}
+
+.tripPrev p{
+  margin:0;
+}
+
+.tripTaker{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width:100%;
+}
+
+.tripPic{
+  width:100px
+}
+
+.pfIcon{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#hmpgLogo {
+  width: 225px;
+  border-radius: 25%;
+}
+
+#loginRail div{
+  margin:15px;
+}
+
+#loginRail h1, #loginRail h2{
+  padding:8px;
+}
+
+#authBtn {
+  background-image: url('../images/login.png');
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  /* put the height and width of your image here */
+  height: 57px;
+  width: 270px;
+  border: none;
 }
