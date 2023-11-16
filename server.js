@@ -9,6 +9,7 @@ const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
 
+const indexRouter = requiret("./routes/index")
 const MongoStore = require('connect-mongo');
 
 // create the Express app
@@ -53,6 +54,7 @@ app.use(function (req, res, next) {
 });
 
 // mount all routes with appropriate base paths
+app.get("/", indexRouter);
 
 
 
