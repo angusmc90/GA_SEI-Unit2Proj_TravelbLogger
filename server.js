@@ -10,7 +10,8 @@ const passport = require('passport');
 const methodOverride = require('method-override');
 
 const MongoStore = require('connect-mongo');
-const indexRouter = require("./routes/index")
+const indexRouter = require("./routes/index");
+const tripsRouter = require("./routes/trips");
 
 // create the Express app
 const app = express();
@@ -55,6 +56,7 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.get("/", indexRouter);
+app.get("/trips", tripsRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
