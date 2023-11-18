@@ -55,8 +55,8 @@ app.use(function (req, res, next) {
 });
 
 // mount all routes with appropriate base paths
-app.get("/", indexRouter);
-app.get("/trips", tripsRouter);
+app.use("/", indexRouter);
+app.use("/trips", tripsRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
