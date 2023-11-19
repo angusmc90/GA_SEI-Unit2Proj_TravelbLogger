@@ -13,16 +13,18 @@ passport.use(new GoogleStrategy({
     // a user has logged in via OAuth!
     // refer to the lesson plan from earlier today in order to set this up
     let user = await UserModel.findOne({googleID: profile.id});
-    // xxx
-    if (user) return cb (null, user);
+    // 
+    if (user) return cb(null, user);
+    console.log("if user exists function passed")
 
     try {
       user = await UserModel.create({
         name: profile.displayName,
-        googleId: profile.Id,
+        googleId: profile.id,
         email: profile.emails[0].value,
         avatar: profile.photos[0].value
       })
+      console.log("user was created")
 
       return (cb, user)
 

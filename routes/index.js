@@ -10,7 +10,7 @@ router.get('/', function (req, res) {
 router.get('/auth/google', passport.authenticate(
   'google',
   { 
-    scope: ['profile', 'email'], 
+    scope: ['profile', 'email'],
     prompt: "select_account"
   }
 ));
@@ -21,7 +21,7 @@ console.log('checking oauth')
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/trips', // where do you want the client to go after you login 
+    successRedirect: '/trips/index', // where do you want the client to go after you login 
     failureRedirect: '/' // where do you want the client to go if login fails
   }
 ));

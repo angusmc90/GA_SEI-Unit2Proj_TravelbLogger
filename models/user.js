@@ -4,10 +4,8 @@ const bloggerUserSchema = new mongoose.Schema({
     // Creating googleID first
     // There won't be any log-ins without OAuth
     name: String,
-    googleId: {
-        type: String,
-        required: true
-    },
+    profileName: String,
+    googleId: String,
     email: String,
     avatar: String,
     hometown: String,
@@ -19,4 +17,9 @@ const bloggerUserSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('bloggerUser', bloggerUserSchema)
+module.exports = mongoose.model('BLoggerUser', bloggerUserSchema)
+
+// {
+//     type: String,
+//     required: true
+// }
