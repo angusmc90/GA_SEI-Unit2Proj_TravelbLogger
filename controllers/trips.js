@@ -27,6 +27,8 @@ async function create (req, res) {
         req.body.user = user.name //COME BACK AND CHANGE THIS TO PROFILE NAME LATER
         req.body.userPFPic = user.avatar
         req.body.userID = user._id
+        //convert "is fave" in form to boolean
+        req.body.favorite = !!req.body.favorite
         //CREATE DOC IN DATABASE
         const tripDoc = await TripModel.create(req.body);
         console.log(tripDoc)
