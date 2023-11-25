@@ -9,7 +9,9 @@ const tripSchema = new mongoose.Schema({
     highlight: String,
     places: Array,
     favorite: Boolean,
-    bLogger: {type: mongoose.Schema.Types.ObjectId, ref: 'BLoggerUser'},
+    user: String,
+    userPFPic: String,
+    userID: String,
     // excursions: [{type: mongoose.Schema.Types.ObjectId, ref: 'Excursion'}],
 }, {
     timstamps: true
@@ -17,8 +19,3 @@ const tripSchema = new mongoose.Schema({
 
 
 module.exports = mongoose.model('Trip', tripSchema)
-
-// {
-//     type: String,
-//     required: true
-// }
