@@ -5,7 +5,10 @@ const bloggerUserSchema = new mongoose.Schema({
     // There won't be any log-ins without OAuth
     name: String,
     profileName: String,
-    googleId: String,
+    googleId: {
+        type: String,
+        required: true
+    },
     email: String,
     avatar: String,
     hometown: String,
@@ -19,7 +22,3 @@ const bloggerUserSchema = new mongoose.Schema({
 
 module.exports = mongoose.model('BLoggerUser', bloggerUserSchema)
 
-// {
-//     type: String,
-//     required: true
-// }
