@@ -3,7 +3,7 @@
     <main>
         <%- include('../partials/nav') %>
             <h2 class="formTitle">Log Your Trip:</h2>
-            <form id="newTripForm">
+            <form id="newTripForm" action="/trips" method="POST">
                 <label>Trip Name:</label>
                 <input type="text" name="tripName"><br/>
                 <label>Trip Start:</label>
@@ -16,7 +16,7 @@
                 <input type="checkbox" name="favorite">
 
                 <input type="submit" value="Add Trip">
-                <input type="submit" value="Save & Add Excursion">
+                <!-- <input type="submit" value="Save & Add Excursion"> -->
             </form>
 
     </main>

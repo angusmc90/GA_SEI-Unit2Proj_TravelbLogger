@@ -12,6 +12,7 @@ const bloggerUserSchema = new mongoose.Schema({
     email: String,
     avatar: String,
     hometown: String,
+    trips: [{type: mongoose.Schema.Types.ObjectId, ref: 'Trip'}],
     faveTrip: String,
     faveExcursion: String,
     bucketList: [String]

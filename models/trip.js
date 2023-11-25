@@ -9,6 +9,8 @@ const tripSchema = new mongoose.Schema({
     highlight: String,
     places: Array,
     favorite: Boolean,
+    bLogger: {type: mongoose.Schema.Types.ObjectId, ref: 'BLoggerUser'},
+    // excursions: [{type: mongoose.Schema.Types.ObjectId, ref: 'Excursion'}],
 }, {
     timstamps: true
 });
