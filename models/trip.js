@@ -6,6 +6,7 @@ const tripSchema = new mongoose.Schema({
     tripName: String,
     tripStart: Date,
     tripEnd: Date,
+    // coverShot: String <- when ready to add photos
     highlight: String,
     places: Array,
     favorite: Boolean,

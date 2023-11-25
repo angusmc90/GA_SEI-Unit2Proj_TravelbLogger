@@ -9,6 +9,29 @@
             </a>
         </div>
         <div id="tripFeedAll" class="feed">
+
+            <% tripDocs.forEach(tripDoc => { %>
+            <ticket>
+                <h3 class="ticketTitle">
+                    <%= tripDoc.tripName %>
+                </h3>
+                <div class="ticketBody">
+                    <img src="./images/tickets.png" class="tripPic">
+                    <div class="tripPrev">
+                        <div class="tripTaker">
+                            <img src="./images/ferdinand.jpeg" class="pfIcon">
+                            <p><%= tripDoc.user %></p>
+                        </div>
+                        <p>
+                            <span class="tripLength"><%= tripDoc.tripStart %> - <%= tripDoc.tripEnd %></span><br />
+                            <span class="tripHighlight"><%= tripDoc.highlight %></span>
+                        </p>
+                    </div>
+                </div>
+            </ticket>
+            <% }) %>
+
+
             <ticket>
                 <h3 class="ticketTitle">
                     TRIP NAME HERE

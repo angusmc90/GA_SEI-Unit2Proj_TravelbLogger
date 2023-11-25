@@ -7,9 +7,11 @@ module.exports ={
     create
 }
 
-function index (req,res) {
+async function index (req,res) {
     try{
-        res.render('trips')
+        const tripDocuments = await TripNModel.find({})
+                                         .exec()
+        res.render('trips', {tripDocs: tripDocuments})
     } catch(err) {
         console.log(err)
         res.send(err)
@@ -27,7 +29,9 @@ async function create (req, res) {
         req.body.user = user.name //COME BACK AND CHANGE THIS TO PROFILE NAME LATER
         req.body.userPFPic = user.avatar
         req.body.userID = user._id
-        //convert "is fave" in form to boolean
+        // when ready to add photos - 
+        // req.body.coverShot = "https://i.imgur.com/wOm0coa.png"
+        // CONVERT "is fave" CHECKBOX TO BOOLEAN
         req.body.favorite = !!req.body.favorite
         //CREATE DOC IN DATABASE
         const tripDoc = await TripModel.create(req.body);
