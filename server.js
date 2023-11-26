@@ -12,6 +12,7 @@ const methodOverride = require('method-override');
 const MongoStore = require('connect-mongo');
 const indexRouter = require("./routes/index");
 const tripsRouter = require("./routes/trips");
+const usersRouter = require("./routes/users");
 
 // create the Express app
 const app = express();
@@ -57,6 +58,7 @@ app.use(function (req, res, next) {
 // mount all routes with appropriate base paths
 app.use("/", indexRouter);
 app.use("/trips", tripsRouter);
+app.use("/users", usersRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

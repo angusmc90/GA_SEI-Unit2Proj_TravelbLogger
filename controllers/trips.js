@@ -9,8 +9,7 @@ module.exports ={
 
 async function index (req,res) {
     try{
-        const tripDocuments = await TripNModel.find({})
-                                         .exec()
+        const tripDocuments = await TripModel.find({}).exec()
         res.render('trips', {tripDocs: tripDocuments})
     } catch(err) {
         console.log(err)
