@@ -8,7 +8,6 @@ async function show (req, res){
     console.log(req.user)
     try {
         const userDoc = await UserModel.findById(req.params.id)
-                                        .popular('trips')
         res.render("users/show")
     } catch(err) {
         console.log(err)

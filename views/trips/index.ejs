@@ -19,8 +19,10 @@
                     <img src="./images/tickets.png" class="tripPic">
                     <div class="tripPrev">
                         <div class="tripTaker">
-                            <img src="<%= tripDoc.userPFPic %>" class="pfIcon">
-                            <p><%= tripDoc.user %></p>
+                            <a href="/users/<%= tripDoc.userID %>">
+                                <img src="<%= tripDoc.userPFPic %>" class="pfIcon">
+                                <p><%= tripDoc.user %></p>
+                            </a>
                         </div>
                         <p>
                             <span class="tripLength"><%= tripDoc.tripStart %> - <%= tripDoc.tripEnd %></span><br />
