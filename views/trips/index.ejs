@@ -1,60 +1,67 @@
 <%- include('../partials/header') %>
 
-<main>
-<%- include('../partials/nav') %>
-    <section id="feedPg">
-        <div>
-            <a href="/trips/new">
-                <button>Stamp My Passport</button>
-            </a>
-        </div>
-        <div id="tripFeedAll" class="feed">
-
-            <% tripDocs.forEach(tripDoc => { %>
-            <ticket>
-                <h3 class="ticketTitle">
-                    <%= tripDoc.tripName %>
-                </h3>
-                <div class="ticketBody">
-                    <img src="./images/tickets.png" class="tripPic">
-                    <div class="tripPrev">
-                        <div class="tripTaker">
-                            <a href="/users/<%= tripDoc.userID %>">
-                                <img src="<%= tripDoc.userPFPic %>" class="pfIcon">
-                                <p><%= tripDoc.user %></p>
-                            </a>
-                        </div>
-                        <p>
-                            <span class="tripLength"><%= tripDoc.tripStart %> - <%= tripDoc.tripEnd %></span><br />
-                            <span class="tripHighlight"><%= tripDoc.highlight %></span>
-                        </p>
-                    </div>
+    <main>
+        <%- include('../partials/nav') %>
+            <section id="feedPg">
+                <div>
+                    <a href="/trips/new">
+                        <button>Stamp My Passport</button>
+                    </a>
                 </div>
-            </ticket>
-            <% }) %>
+                <div id="tripFeedAll" class="feed">
+
+                    <% tripDocs.forEach(tripDoc=> { %>
+                        <ticket>
+                            <h3 class="ticketTitle">
+                                <%= tripDoc.tripName %>
+                            </h3>
+                            <div class="ticketBody">
+                                <img src="./images/tickets.png" class="tripPic">
+                                <div class="tripPrev">
+                                    <div class="tripTaker">
+                                        <a href="/users/<%= tripDoc.userID %>">
+                                            <img src="<%= tripDoc.userPFPic %>" class="pfIcon">
+                                            <p>
+                                                <%= tripDoc.user %>
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <p>
+                                        <span class="tripLength">
+                                            <%= tripDoc.tripStart %> - <%= tripDoc.tripEnd %>
+                                        </span><br />
+                                        <span class="tripHighlight">
+                                            <%= tripDoc.highlight %>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </ticket>
+                        <% }) %>
 
 
-            <ticket>
-                <h3 class="ticketTitle">
-                    TRIP NAME HERE
-                </h3>
-                <div class="ticketBody">
-                    <img src="./images/tickets.png" class="tripPic">
-                    <div class="tripPrev">
-                        <div class="tripTaker">
-                            <img src="./images/ferdinand.jpeg" class="pfIcon">
-                            <p>Ferdinand Thee Bull</p>
-                        </div>
-                        <p>
-                            <span class="tripLength">TRIP START - TRIP END</span><br />
-                            <span class="tripHighlight">I act like I'm an outdoor cat, but really I'm in an indoor cat
-                                and traveling sounds like a nightmare, so I'm only here to stalk.</span>
-                        </p>
-                    </div>
+                            <ticket>
+                                <h3 class="ticketTitle">
+                                    TRIP NAME HERE
+                                </h3>
+                                <div class="ticketBody">
+                                    <img src="./images/tickets.png" class="tripPic">
+                                    <div class="tripPrev">
+                                        <div class="tripTaker">
+                                            <img src="./images/ferdinand.jpeg" class="pfIcon">
+                                            <p>Ferdinand Thee Bull</p>
+                                        </div>
+                                        <p>
+                                            <span class="tripLength">TRIP START - TRIP END</span><br />
+                                            <span class="tripHighlight">I act like I'm an outdoor cat, but really I'm in
+                                                an indoor cat
+                                                and traveling sounds like a nightmare, so I'm only here to stalk.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </ticket>
                 </div>
-            </ticket>
-        </div>
-    </section>
-</main>
+            </section>
+    </main>
 
 <%- include('../partials/footer') %>

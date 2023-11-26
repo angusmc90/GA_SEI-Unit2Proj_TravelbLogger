@@ -1,1 +1,52 @@
-<h1>THIS IS THE USER PROFILE PAGE</h1>
+<%- include('../partials/header') %>
+
+    <main>
+        <%- include('../partials/nav') %>
+        <div>
+
+            <article>
+                <h1>PROFILE NAME</h1>
+                <div>
+                    PROFILE PIC
+                </div>
+                <div>
+                    FULL NAME<br/>
+                    HOMETOWN<br/>
+                    Favorite Trip:<br/>
+                    TRIP NAME<br/>
+                    Favorite Excursion:<br/>
+                    EXCURSION NAME<br/>
+                    Bucket List Travel:<br/>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </div>
+            </article>
+
+            <aside>
+                <ticket>
+                    <h3 class="ticketTitle">
+                        TRIP NAME HERE
+                    </h3>
+                    <div class="ticketBody">
+                        <img src="./images/tickets.png" class="tripPic">
+                        <div class="tripPrev">
+                            <p>
+                                <span class="tripLength">TRIP START - TRIP END</span><br />
+                                <span class="tripHighlight">I act like I'm an outdoor cat, but really I'm in
+                                    an indoor cat
+                                    and traveling sounds like a nightmare, so I'm only here to stalk.</span>
+                            </p>
+                        </div>
+                    </div>
+                </ticket>
+            </aside>
+
+        </div>
+
+    </main>
+
+
+<%- include('../partials/footer') %>

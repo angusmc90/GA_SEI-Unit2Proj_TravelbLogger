@@ -7,8 +7,8 @@ module.exports ={
 async function show (req, res){
     console.log(req.user)
     try {
-        const userDoc = await UserModel.findById(req.params.id)
-        res.render("users/show")
+        const userDocument = await UserModel.findById(req.params.id)
+        res.render("users/show", {userDoc: userDocument})
     } catch(err) {
         console.log(err)
     }
