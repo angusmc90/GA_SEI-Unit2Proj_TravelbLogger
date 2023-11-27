@@ -4,7 +4,8 @@ const TripModel = require("../models/trip");
 module.exports ={
     index,
     new: newTrip,
-    create
+    create,
+    show
 }
 
 async function index (req,res) {
@@ -42,6 +43,16 @@ async function create (req, res) {
 
         //GO BACK TO FEED
         res.render('trips')
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+async function show (req, res){
+    console.log(req.user)
+    try {
+        const tripDocument = await TripModel.findById(req.params.id)
+        res.render("trips/show", {tripDoc: tripDocument})
     } catch(err) {
         console.log(err)
     }

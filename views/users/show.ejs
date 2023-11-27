@@ -11,18 +11,24 @@
                             <img src="https://i.imgur.com/c5BIxS5.png">
                         </div>
                         <div class="pfdetails">
-                            FULL NAME<br />
-                            HOMETOWN<br />
-                            Favorite Trip:<br />
-                            TRIP NAME<br />
-                            Favorite Excursion:<br />
-                            EXCURSION NAME<br />
-                            Bucket List Travel:<br />
-                            <ul>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                            </ul>
+                            <p><%= userDoc.name %></p>
+                            <p>
+                                Hometown:<br/>
+                                <%= userDoc.hometown %></p>
+                            <p>
+                                Favorite Trip<br/>
+                                <%= userDoc.faveTrip %>
+                            </p>
+                            <p>
+                                Favorite Excursion<br/>
+                                <%= userDoc.faveExcursion %>
+                            </p>
+                            <p>
+                                Bucket List Travel:<br/>
+                                <ul>
+                                    <li>add li for foreach</li>
+                                </ul>
+                            </p>
                         </div>
                     </div>
                 </article>

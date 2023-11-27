@@ -186,7 +186,7 @@ article.pfpg{
 }
 
 .pfpicFull{
-  max-width: 55%;
+  max-width: 60%;
 }
 
 .pfpicFull img{
@@ -204,5 +204,6 @@ aside.pfpg{
 }
 
 ticket.sml{
+  margin: 10px 3px;
   /* background-color: black; */
 }
