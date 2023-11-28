@@ -11,7 +11,11 @@ body {
 
 /*
 *************************
+*************************
+
 HOME/LOGIN PAGE
+
+*************************
 *************************
 */
 
@@ -117,7 +121,11 @@ div.ticketBody{
 
 /*
 *************************
+*************************
+
 TRIP FEED PAGE
+
+*************************
 *************************
 */
 
@@ -151,12 +159,16 @@ section#feedPg{
 
 /*
 *************************
+*************************
+
 PROFILE PAGE
+
+*************************
 *************************
 */
 
 
-#pfpgContainer {
+#pfpgContainer, #tripPgContainer {
   display: flex;
   flex-direction: row;
   width:85%;
@@ -206,4 +218,55 @@ aside.pfpg{
 ticket.sml{
   margin: 10px 3px;
   /* background-color: black; */
+}
+
+
+/*
+*************************
+*************************
+
+TRIP & EXCURSION PAGES
+
+*************************
+*************************
+*/
+
+article.tripPg{
+  width: 50%;
+}
+
+article.tripPg{
+  width:55%;
+  background-color: pink;
+  padding:25px;
+  display:flex;
+  flex-direction: column;
+}
+
+.tripPg h1{
+  padding-bottom: 15px;
+  margin: 0;
+}
+
+.tripInfo{
+  display:flex;
+  flex-direction: row;
+}
+
+.tripPicLg{
+  max-width: 40%
+}
+
+.tripPicLg img{
+  max-width:100%
+}
+
+.tripDetails {
+  max-width: 60%;
+  padding: 0 15px
+}
+
+aside.tripComments{
+  width:35%;
+  background-color: brown
 }

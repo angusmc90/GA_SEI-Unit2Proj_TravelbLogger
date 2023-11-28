@@ -1,16 +1,44 @@
 <%- include('../partials/header') %>
 
-<main>
-    <h1>trips show view  - i started writing here i guess</h1>
-<%- include('../partials/nav') %>
-    <section id="showTripPg">
-        <article id="tripDetails">
-            <!-- trip details -->
-        </article>
-        <aside class="tripComments">
-            <!-- comments feed -->
-        </aside>
-    </section>
-</main>
+    <main>
+        <%- include('../partials/nav') %>
+            <div id="tripPgContainer">
 
-<%- include('../partials/footer') %>
+                <article class="tripPg">
+                    <h1><%= tripDoc.tripName %></h1>
+                    <div class="tripInfo">
+                        <div class="tripPicLg">
+                            <img src="https://i.imgur.com/c5BIxS5.png">
+                        </div>
+                        <div class="tripDetails">
+                            <a href="/users/<%= tripDoc.userID %>">
+                                <img src="<%= tripDoc.userPFPic %>" class="pfIcon"> <%= tripDoc.user %>
+                            </a><br/>
+                            <p>
+                                <span class="favorite"><%= (tripDoc.favorite === true) ? 'FAVE TRIP!' : 'Meh' %></span><br/>
+                                <span class="tripLength">
+                                    <%= tripDoc.tripStart %> - <%= tripDoc.tripEnd %>
+                                </span><br />
+                                <span class="tripHighlight">
+                                    <%= tripDoc.highlight %>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div id="excusionList">
+                        Excursions Go here
+                    </div>
+                </article>
+
+                <aside class="tripComments">
+                    <ticket class="sml">
+                        change this el tag name
+                    </ticket>
+                </aside>
+
+            </div>
+
+    </main>
+
+
+    <%- include('../partials/footer') %>
