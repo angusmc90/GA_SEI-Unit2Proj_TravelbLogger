@@ -13,6 +13,7 @@ const MongoStore = require('connect-mongo');
 const indexRouter = require("./routes/index");
 const tripsRouter = require("./routes/trips");
 const usersRouter = require("./routes/users");
+const excursionsRouter = require("./routes/excursions");
 
 // create the Express app
 const app = express();
@@ -59,6 +60,7 @@ app.use(function (req, res, next) {
 app.use("/", indexRouter);
 app.use("/trips", tripsRouter);
 app.use("/users", usersRouter);
+app.use("/trips/:id/excursions", excursionsRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

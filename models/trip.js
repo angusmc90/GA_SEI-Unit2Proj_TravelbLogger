@@ -13,7 +13,7 @@ const tripSchema = new mongoose.Schema({
     user: String,
     userPFPic: String,
     userID: String,
-    // excursions: [{type: mongoose.Schema.Types.ObjectId, ref: 'Excursion'}],
+    excursions: [{type: mongoose.Schema.Types.ObjectId, ref: 'Excursion'}],
 }, {
     timstamps: true
 });

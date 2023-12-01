@@ -5,17 +5,23 @@
             <div id="tripPgContainer">
 
                 <article class="tripPg">
-                    <h1><%= tripDoc.tripName %></h1>
+                    <h1>
+                        <%= tripDoc.tripName %>
+                    </h1>
                     <div class="tripInfo">
                         <div class="tripPicLg">
-                            <img src="https://i.imgur.com/c5BIxS5.png">
+                            <img src="https://i.imgur.com/87rDzIU.png">
+                            <!-- <img src="https://i.imgur.com/nvXzRfp.jpeg"> -->
                         </div>
                         <div class="tripDetails">
                             <a href="/users/<%= tripDoc.userID %>">
-                                <img src="<%= tripDoc.userPFPic %>" class="pfIcon"> <%= tripDoc.user %>
-                            </a><br/>
+                                <img src="<%= tripDoc.userPFPic %>" class="pfIcon">
+                                <%= tripDoc.user %>
+                            </a><br />
                             <p>
-                                <span class="favorite"><%= (tripDoc.favorite === true) ? 'FAVE TRIP!' : 'Meh' %></span><br/>
+                                <span class="favorite">
+                                    <%= (tripDoc.favorite===true) ? 'FAVE TRIP!' : 'Meh' %>
+                                </span><br />
                                 <span class="tripLength">
                                     <%= tripDoc.tripStart %> - <%= tripDoc.tripEnd %>
                                 </span><br />
@@ -26,7 +32,10 @@
                         </div>
                     </div>
                     <div id="excusionList">
-                        Excursions Go here
+                        Excursions: |
+                        <a href="/trips/<%= tripDoc._id %>/excursions/new">
+                            <button>Add Excursion</button>
+                        </a>
                     </div>
                 </article>
 
