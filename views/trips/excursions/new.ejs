@@ -1,1 +1,27 @@
-<h1>this is the add excursions form</h1>
+<%- include('../../partials/header') %>
+
+    <main>
+        <%- include('../../partials/nav') %>
+
+        <h2 class="formTitle">Add a memoriable moment form your TRIPNAME trip:</h2>
+        <p>THE BELOW FORM IS A COPY AND PASTE FOR NOW - ADJUST WHEN TIME ALLOWS BASED ON EXCURSION MODEL</p>
+        <form id="newTripForm" action="/trips" method="POST">
+            <label>Trip Name:</label>
+            <input type="text" name="tripName"><br/>
+            <label>Trip Start:</label>
+            <input type="date" name="tripStart"><br/>
+            <label>Trip End:</label>
+            <input type="date" name="tripEnd"><br/>
+            <label>Highlights / Summary:</label>
+            <textarea name="highlight"></textarea>
+            <label>Was this trip your favorite?</label>
+            <input type="checkbox" name="favorite">
+
+            <input type="submit" value="Add Trip">
+            <!-- <input type="submit" value="Save & Add Excursion"> -->
+        </form>
+
+    </main>
+
+
+    <%- include('../../partials/footer') %>

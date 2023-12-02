@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const passport = require('passport');
 
+// the functions below were mostly provided inside of a boiler plate and i had such trouble with the oauth im afraid to adjust them into a prettier format
+
 // The root route renders our only view
 router.get('/', function (req, res) {
   res.render('index');

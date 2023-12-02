@@ -56,7 +56,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-// mount all routes with appropriate base paths
+// mounting routers to call the proper controllers at a base path
 app.use("/", indexRouter);
 app.use("/trips", tripsRouter);
 app.use("/users", usersRouter);

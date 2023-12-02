@@ -35,7 +35,7 @@ async function create (req, res) {
         req.body.favorite = !!req.body.favorite
         //CREATE DOC IN DATABASE
         const tripDoc = await TripModel.create(req.body);
-        console.log(tripDoc)
+        // console.log(tripDoc)
 
         // we need to add user details so we can see them in the trip and possible link to them
         // then we need to push the tripDoc to the user doc
@@ -49,7 +49,7 @@ async function create (req, res) {
 }
 
 async function show (req, res){
-    console.log(req.user)
+    // console.log(req.user)
     try {
         const tripDocument = await TripModel.findById(req.params.id)
         res.render("trips/show", {tripDoc: tripDocument})

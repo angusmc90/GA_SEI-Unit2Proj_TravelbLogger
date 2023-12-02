@@ -4,6 +4,7 @@ module.exports ={
     new: newExcursion
 }
 
-async function newExcursion (req, res){
-    console.log("new excursion")
+function newExcursion (req, res){
+    const tripID = req.params.id
+    res.render('trips/excursions/new', { tripID })
 }
