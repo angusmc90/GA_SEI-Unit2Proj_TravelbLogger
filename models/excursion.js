@@ -1,15 +1,17 @@
 const mongoose = require('mongoose');
 
-const tripSchema = new mongoose.Schema({
+const excursionSchema = new mongoose.Schema({
     // Creating googleID first
     // There won't be any log-ins without OAuth
-    xrsnName: String,
-    xrsnDate: Date,
-    xrsnAbout: String,
-    // coverShot: String <- when ready to add photos
-    xrsnNotes: String,
-    xrsnCity: String,
-    xrsnCountry: String,
+    name: String,
+    date: Date,
+    about: String,
+    coverPic: String,
+    // photos: [String], NOT ADDED YET
+    city: String,
+    country: String,
+    highlights: String,
+    recommends: Boolean,
     user: String,
     userPFPic: String,
     userID: String,
@@ -19,4 +21,4 @@ const tripSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('Trip', tripSchema)
+module.exports = mongoose.model('Excursion', excursionSchema)

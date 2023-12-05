@@ -6,16 +6,20 @@
         <h2 class="formTitle">Add a memoriable moment form your TRIPNAME trip:</h2>
         <p>THE BELOW FORM IS A COPY AND PASTE FOR NOW - ADJUST WHEN TIME ALLOWS BASED ON EXCURSION MODEL</p>
         <form id="newTripForm" action="/trips" method="POST">
-            <label>Trip Name:</label>
-            <input type="text" name="tripName"><br/>
-            <label>Trip Start:</label>
-            <input type="date" name="tripStart"><br/>
-            <label>Trip End:</label>
-            <input type="date" name="tripEnd"><br/>
-            <label>Highlights / Summary:</label>
-            <textarea name="highlight"></textarea>
-            <label>Was this trip your favorite?</label>
-            <input type="checkbox" name="favorite">
+            <label>Excursion Name:</label><br/>
+            <input type="text" name="name"><br/>
+            <label>Date of:</label><br/>
+            <input type="date" name="date"><br/>
+            <label>About: Be sure to include links</label><br/>
+            <textarea name="about"></textarea><br/>
+            <label>City:</label><br/>
+            <input type="text" name="city"><br/>
+            <label>Country:</label><br/>
+            <input type="text" name="country"><br/>
+            <label>Highlights / Summary:</label><br/>
+            <textarea name="highlight"></textarea><br/>
+            <label>Would you recommend this for others?</label><br/>
+            <input type="checkbox" name="recommends"><br/>
 
             <input type="submit" value="Add Trip">
             <!-- <input type="submit" value="Save & Add Excursion"> -->
