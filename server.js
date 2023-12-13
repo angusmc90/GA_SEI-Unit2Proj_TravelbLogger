@@ -51,13 +51,9 @@ app.use(passport.session());
 
 // Add this middleware BELOW passport middleware
 app.use(function (req, res, next) {
-  res.locals.user = req.user; // assigning a property to res.locals, makes that said property (user) available in every
-  console.log('User:', res.locals.user);
-  res.locals.tripID = req.params.tripID || null;  // store tripID, make null if not int he URL
-  console.log('Trip ID:', res.locals.tripID);
-  res.locals.xrsnID = req.params.xrsnID || null;
-  console.log('Excursion ID:', res.locals.xrsnID);
-
+  res.locals.user = req.user; 
+  // assigning a property to res.locals, makes that said property (user) available in every single ejs view
+  console.log(trip)
   next();
 });
 
