@@ -54,7 +54,6 @@ app.use(passport.session());
 app.use(function (req, res, next) {
   res.locals.user = req.user; 
   // assigning a property to res.locals, makes that said property (user) available in every single ejs view
-  console.log(trip)
   next();
 });
 

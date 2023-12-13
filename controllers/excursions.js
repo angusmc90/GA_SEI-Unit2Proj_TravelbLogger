@@ -7,11 +7,14 @@ module.exports ={
 }
 
 function newExcursion (req, res){
-        res.render('trips/excursions/new')
-    // }
+    // Go to new excursion form page
+    res.render('trips/excursions/new')
 }
 
 async function create (req, res) {
+    // BEEF NOTE: Dec 13 2023
+    // Cannot for the life of me get the params of the trip ID to tie the excurion to the trip
+    // which is the whole point of this feature
     try{
         // console.log(trip._id)
     } catch(err) {

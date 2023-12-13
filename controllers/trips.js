@@ -1,5 +1,4 @@
 const TripModel = require("../models/trip");
-//Will need to require models here when ready to pull created trips
 
 module.exports ={
     index,
@@ -10,7 +9,12 @@ module.exports ={
 
 async function index (req,res) {
     try{
+        // BEEF NOTE:
+        // find all trip documents
         const tripDocuments = await TripModel.find({}).exec()
+        // BEEF NOTE: 
+        // seems .exec isnt needed? 
+        // render the trips index page with all of the trip documents found
         res.render('trips', {tripDocs: tripDocuments})
     } catch(err) {
         console.log(err)
@@ -24,7 +28,8 @@ function newTrip(req,res){
 
 async function create (req, res) {
     try{
-        //CREATE ATTRIBUTES IN BODY TO CAPTURE USER INFO FOR UI
+        // BEEF NOTE:
+        // CREATE ATTRIBUTES IN BODY TO CAPTURE USER INFO FOR UI
         const user = req.user
         req.body.user = user.name //COME BACK AND CHANGE THIS TO PROFILE NAME LATER
         req.body.userPFPic = user.avatar
@@ -49,9 +54,9 @@ async function create (req, res) {
 }
 
 async function show (req, res){
-    // console.log(req.user)
     try {
         const tripDocument = await TripModel.findById(req.params.tripID)
+        // this method uses the /trips/:tripID path so thats is why tripID is accessible here
         res.render("trips/show", {tripDoc: tripDocument})
     } catch(err) {
         console.log(err)
