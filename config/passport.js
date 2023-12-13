@@ -10,17 +10,17 @@ passport.use(new GoogleStrategy({
     callbackURL: process.env.GOOGLE_CALLBACK
   },
   async function(accessToken, refreshToken, profile, cb) {
-    // a user has logged in via OAuth!
-    // refer to the lesson plan from earlier today in order to set this up
+    // BEEF NOTE:
+    // When user logs in with google, search DB if that user exists
     let user = await UserModel.findOne({googleId: profile.id});
-    // console.log(`user is ${user} profile id is ${profile.id}`)
-    // console.log(`callback is ${cb}`)
-
+    // BEEF NOTE:
+    // If the user exists, call back the previous function, and pass along the user document
     if (user){
-      // console.log("if user exists function passed")
       return cb(null, user);
     } 
-    // console.log('No User Found, I am creating a user!');
+
+    // BEEF NOTE:
+    // If the user doesn't exist, create a new user
     try {
       user = await UserModel.create({
         name: profile.displayName,
@@ -28,8 +28,8 @@ passport.use(new GoogleStrategy({
         email: profile.emails[0].value,
         avatar: profile.photos[0].value
       })
-      // console.log("user was created")
-
+      // BEEF NOTE:
+      // Then call back the previous function and pass along the created user documemnt
       return (cb, user)
 
     } catch(err) {
