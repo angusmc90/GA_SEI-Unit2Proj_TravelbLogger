@@ -1,22 +1,22 @@
 const mongoose = require('mongoose');
 
 const excursionSchema = new mongoose.Schema({
-    // Creating googleID first
-    // There won't be any log-ins without OAuth
     name: String,
     date: Date,
     about: String,
     coverPic: String,
-    // photos: [String], NOT ADDED YET
+    // photos: [String], | BEEF NOTE: feature not added yet
     city: String,
     country: String,
     highlights: String,
     recommends: Boolean,
-    trip: String,
-    user: String,
-    userPFPic: String,
-    userID: String,
-    // excursions: [{type: mongoose.Schema.Types.ObjectId, ref: 'Excursion'}],
+    // BEEF NOTE: figure out the best way to store the below in the model.
+    // maybe as a single nested object?
+    // ----
+    // trip: String,
+    // user: String,
+    // userPFPic: String,
+    // userID: String,
 }, {
     timstamps: true
 });

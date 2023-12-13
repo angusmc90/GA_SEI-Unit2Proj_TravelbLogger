@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const bloggerUserSchema = new mongoose.Schema({
-    // Creating googleID first
-    // There won't be any log-ins without OAuth
     name: String,
     profileName: String,
+    // BEEF NOTE:
+    // login only happening via google & OAuth, so googleID needed
     googleId: {
         type: String,
         required: true

@@ -1,12 +1,10 @@
 const mongoose = require('mongoose');
 
 const tripSchema = new mongoose.Schema({
-    // Creating googleID first
-    // There won't be any log-ins without OAuth
     tripName: String,
     tripStart: Date,
     tripEnd: Date,
-    // coverShot: String <- when ready to add photos
+    // coverShot: String, | BEEF NOTE: add photos feature not added yet
     highlight: String,
     places: Array,
     favorite: Boolean,
