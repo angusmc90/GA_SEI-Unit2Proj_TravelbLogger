@@ -6,6 +6,6 @@ const tripsCntrl = require('../controllers/trips')
 router.get('/', tripsCntrl.index)
 router.get('/new', tripsCntrl.new)
 router.post('/', tripsCntrl.create)
-router.get('/:id', tripsCntrl.show)
+router.get('/:tripID', tripsCntrl.show)
 
 module.exports = router;

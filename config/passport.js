@@ -17,10 +17,10 @@ passport.use(new GoogleStrategy({
     // console.log(`callback is ${cb}`)
 
     if (user){
-      console.log("if user exists function passed")
+      // console.log("if user exists function passed")
       return cb(null, user);
     } 
-    console.log('No User Found, I am creating a user!');
+    // console.log('No User Found, I am creating a user!');
     try {
       user = await UserModel.create({
         name: profile.displayName,
@@ -28,7 +28,7 @@ passport.use(new GoogleStrategy({
         email: profile.emails[0].value,
         avatar: profile.photos[0].value
       })
-      console.log("user was created")
+      // console.log("user was created")
 
       return (cb, user)
 

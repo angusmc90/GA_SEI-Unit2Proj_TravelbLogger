@@ -51,7 +51,7 @@ async function create (req, res) {
 async function show (req, res){
     // console.log(req.user)
     try {
-        const tripDocument = await TripModel.findById(req.params.id)
+        const tripDocument = await TripModel.findById(req.params.tripID)
         res.render("trips/show", {tripDoc: tripDocument})
     } catch(err) {
         console.log(err)

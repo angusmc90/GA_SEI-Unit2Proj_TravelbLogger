@@ -52,7 +52,12 @@ app.use(passport.session());
 // Add this middleware BELOW passport middleware
 app.use(function (req, res, next) {
   res.locals.user = req.user; // assigning a property to res.locals, makes that said property (user) available in every
-  // single ejs view
+  console.log('User:', res.locals.user);
+  res.locals.tripID = req.params.tripID || null;  // store tripID, make null if not int he URL
+  console.log('Trip ID:', res.locals.tripID);
+  res.locals.xrsnID = req.params.xrsnID || null;
+  console.log('Excursion ID:', res.locals.xrsnID);
+
   next();
 });
 
@@ -60,7 +65,9 @@ app.use(function (req, res, next) {
 app.use("/", indexRouter);
 app.use("/trips", tripsRouter);
 app.use("/users", usersRouter);
-app.use("/trips/:id/excursions", excursionsRouter);
+app.use("/trips/:tripID/excursions", excursionsRouter);
+
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 

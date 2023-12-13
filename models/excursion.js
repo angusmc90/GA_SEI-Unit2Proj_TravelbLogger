@@ -12,6 +12,7 @@ const excursionSchema = new mongoose.Schema({
     country: String,
     highlights: String,
     recommends: Boolean,
+    trip: String,
     user: String,
     userPFPic: String,
     userID: String,
