@@ -1,9 +1,11 @@
 const router = require('express').Router();
 const passport = require('passport');
 
+// BEEF NOTE: 
 // the functions below were mostly provided inside of a boiler plate and i had such trouble with the oauth im afraid to adjust them into a prettier format
 
-// The root route renders our only view
+// BEEF NOTE:
+// Render the login page
 router.get('/', function (req, res) {
   res.render('index');
 });
@@ -17,7 +19,7 @@ router.get('/auth/google', passport.authenticate(
   }
 ));
 
-console.log('checking oauth')
+// console.log('checking oauth')
 
 // Google OAuth callback route
 router.get('/oauth2callback', passport.authenticate(
