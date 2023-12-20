@@ -18,7 +18,7 @@ async function create (req, res) {
     // which is the whole point of this feature
     //BEEF NOTE Dec 20 2023
     // https://github.com/expressjs/express/issues/3177
-    console.log(req.params.tripID)
+    console.log(req.param.tripID)
     try{
         //
     } catch(err) {

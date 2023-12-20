@@ -55,15 +55,16 @@ app.use(function (req, res, next) {
   next();
 });
 
+// CHECKING MASYER AUTH CONTROLLER
+const bouncer = require('./controllers/bouncer.js')
+app.use('/trips/:tripID', bouncer)
+
 // mounting routers to call the proper controllers at a base path
 app.use("/trips/:tripID/excursions", excursionsRouter);
 app.use("/trips", tripsRouter);
 app.use("/users", usersRouter);
 app.use("/", indexRouter);
 
-// CHECKING MASYER AUTH CONTROLLER
-const bouncer = require('./controllers/bouncer.js')
-app.use('/', bouncer)
 
 
 app.use(express.static(path.join(__dirname, 'public')));
