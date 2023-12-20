@@ -23,10 +23,6 @@ require('./config/database');
 // configure Passport
 require('./config/passport');
 
-// CHECKING MASYER AUTH CONTROLLER
-const bouncer = require('./controllers/bouncer.js')
-app.use('/', bouncer)
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -60,11 +56,14 @@ app.use(function (req, res, next) {
 });
 
 // mounting routers to call the proper controllers at a base path
-app.use("/", indexRouter);
+app.use("/trips/:tripID/excursions", excursionsRouter);
 app.use("/trips", tripsRouter);
 app.use("/users", usersRouter);
-app.use("/trips/:tripID/excursions", excursionsRouter);
+app.use("/", indexRouter);
 
+// CHECKING MASYER AUTH CONTROLLER
+const bouncer = require('./controllers/bouncer.js')
+app.use('/', bouncer)
 
 
 app.use(express.static(path.join(__dirname, 'public')));
