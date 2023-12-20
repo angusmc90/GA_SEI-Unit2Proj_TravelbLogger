@@ -23,12 +23,9 @@ require('./config/database');
 // configure Passport
 require('./config/passport');
 
-
-app.use(function (req, res, next) {
-  console.log("top of server")
-  console.log(req.params)
-  next()
-})
+// CHECKING MASYER AUTH CONTROLLER
+const bouncer = require('./controllers/bouncer.js')
+app.use('/', bouncer)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
