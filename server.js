@@ -54,8 +54,6 @@ app.use(passport.session());
 
 // Add this middleware BELOW passport middleware
 app.use(function (req, res, next) {
-  console.log("in locals assign fn")
-  console.log(req.params)
   res.locals.user = req.user; 
   // assigning a property to res.locals, makes that said property (user) available in every single ejs view
   next();
