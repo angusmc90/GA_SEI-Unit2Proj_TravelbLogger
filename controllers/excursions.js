@@ -8,7 +8,8 @@ module.exports ={
 
 function newExcursion (req, res){
     // Go to new excursion form page
-    console.log(req.query)
+    console.log('the new excusion pg')
+    console.log(res.locals)
     res.render('trips/excursions/new')
 }
 
@@ -18,6 +19,8 @@ async function create (req, res) {
     // which is the whole point of this feature
     //BEEF NOTE Dec 20 2023
     // https://github.com/expressjs/express/issues/3177
+    // note to self for pick up to look at the create fn in teh trips controller
+    // how was i able to assign req.user to a variable if the local vairables are alow available at the time of rendering?
 
     try{
         //

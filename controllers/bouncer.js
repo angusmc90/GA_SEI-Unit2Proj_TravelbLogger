@@ -9,9 +9,11 @@ module.exports = {
 }
 
 function user (req, res, next) {
-  console.log('ORIGINAL URL')
-  console.log(req.originalUrl)
-    res.locals.user2 = req.user; 
+  // console.log('ORIGINAL URL')
+  // console.log(req.originalUrl)
+  // maybe eventually figure out how to split this up?
+
+    res.locals.user = req.user; 
     // assigning a property to res.locals, makes that said property (user) available in every single ejs view
     next();
 }
