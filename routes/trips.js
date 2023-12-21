@@ -15,3 +15,7 @@ module.exports = router;
 // not sure if i used that right? look up the res.redirect method later
 // that can then render the trip.get to go back to the trip show page
 // why did i not think of this before?
+
+// eventual feature - add excursions from a index page or all excursions
+// - form from there will ask a user to select a trip to add the excursion too
+// - or had a HOMETOWN/DAYTRIP section for people who dont/cant leave their local areas
