@@ -54,6 +54,8 @@ async function create (req, res) {
 }
 
 async function show (req, res){
+    // console.log("TRIPS SHOW LOCALS CALL")
+    // console.log(res.locals)
     try {
         const tripDocument = await TripModel.findById(req.params.tripID)
         // this method uses the /trips/:tripID path so thats is why tripID is accessible here
