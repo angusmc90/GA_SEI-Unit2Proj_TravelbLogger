@@ -9,3 +9,9 @@ router.post('/', tripsCntrl.create) // BEEF NOTE: Create new trip doc and render
 router.get('/:tripID', tripsCntrl.show) // BEEF NOTE: Render a specific trip page
 
 module.exports = router;
+
+// BEEF NOTE 10/21
+// Add a post method for /:tripID here that the excursion form will redirect thru 
+// not sure if i used that right? look up the res.redirect method later
+// that can then render the trip.get to go back to the trip show page
+// why did i not think of this before?
