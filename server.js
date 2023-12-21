@@ -60,6 +60,12 @@ const bouncer = require('./controllers/bouncer.js')
 app.use(bouncer.user)
 app.use('/trips/:tripID', bouncer.urlIDs)
 
+app.use(function (req,res,next){
+  console.log('SERVER PRINTING LOCALS')
+  console.log(res.locals)
+  next();
+})
+
 // mounting routers to call the proper controllers at a base path
 app.use("/trips/:tripID/excursions", excursionsRouter);
 app.use("/trips", tripsRouter);
