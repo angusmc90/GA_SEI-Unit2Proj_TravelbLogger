@@ -10,13 +10,26 @@ const excursionSchema = new mongoose.Schema({
     country: String,
     highlights: String,
     recommends: Boolean,
+    tripID: String,
+    tripName: String,
+    userID: String,
+    user: String,
+    userPFPic: String,
+    // comments: [],
+    // --
+    // --
     // BEEF NOTE: figure out the best way to store the below in the model.
     // maybe as a single nested object?
     // ----
-    // trip: String,
-    // user: String,
-    // userPFPic: String,
-    // userID: String,
+    // relTrip: {
+    //     tripID: String,
+    //     tripName: String,
+    // },
+    // relUser: {
+    //     userID: String,
+    //     user: String,
+    //     userPFPic: String,
+    // }
 }, {
     timstamps: true
 });

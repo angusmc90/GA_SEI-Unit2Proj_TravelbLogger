@@ -19,13 +19,14 @@ function user (req, res, next) {
 }
 
 
-function urlIDs (req, res, next) {
+async function urlIDs (req, res, next) {
     // console.log("- BOUNCER FUNCTION -")
     // console.log("Route:")
     // console.log(req.originalUrl)
     // console.log("Params:")
     console.log(req.params)
-    res.locals.tripID = req.params.tripID
+    const relTrip = await TripModel.findById(req.params.tripID)
+    res.locals.relTrip = relTrip
     // console.log("all local variables")
     // console.log(res.locals)
 
