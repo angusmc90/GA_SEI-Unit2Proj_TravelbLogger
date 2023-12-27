@@ -1,5 +1,6 @@
+const userModel = require("../models/user");
 const TripModel = require("../models/trip");
-const ExcursionModel = require("../models/user");
+const ExcursionModel = require("../models/excursion");
 
 module.exports ={
     new: newExcursion,
@@ -20,34 +21,27 @@ async function create (req, res) {
     // note to self for pick up to look at the create fn in teh trips controller
     // how was i able to assign req.user to a variable if the local vairables are alow available at the time of rendering?
 
-    req.body.user = user.name //COME BACK AND CHANGE THIS TO PROFILE NAME LATER
-    req.body.userPFPic = user.avatar
-    req.body.userID = user._id
-    // when ready to add photos - 
-    // req.body.coverShot = "https://i.imgur.com/wOm0coa.png"
-    // CONVERT "is fave" CHECKBOX TO BOOLEAN
-    req.body.recommends = !!req.body.recommends
-    //CREATE DOC IN DATABASE
-    const excursionDoc = await ExcursionModel.create(req.body);
-    console.log(excursionDoc._id)
-    res.render('trips')
-
-    // try{
-
-    //     req.body.user = user.name //COME BACK AND CHANGE THIS TO PROFILE NAME LATER
-    //     req.body.userPFPic = user.avatar
-    //     req.body.userID = user._id
-    //     // when ready to add photos - 
-    //     // req.body.coverShot = "https://i.imgur.com/wOm0coa.png"
-    //     // CONVERT "is fave" CHECKBOX TO BOOLEAN
-    //     req.body.recommends = !!req.body.recommends
-    //     //CREATE DOC IN DATABASE
-    //     const excursionDoc = await ExcursionModel.create(req.body);
-    //     console.log(excursionDoc._id)
-    //     res.render('trips')
-    // } catch(err) {
-    //     console.log(err)
-    // }
+    try{
+        const user = req.user; // Retrieve user object from request
+        req.body.user = user.name //COME BACK AND CHANGE THIS TO PROFILE NAME LATER
+        req.body.userPFPic = user.avatar
+        req.body.userID = user._id
+        // when ready to add photos - 
+        // req.body.coverShot = "https://i.imgur.com/wOm0coa.png"
+        // CONVERT "is fave" CHECKBOX TO BOOLEAN
+        req.body.recommends = !!req.body.recommends
+        //CREATE DOC IN DATABASE
+        const excursionDoc = await ExcursionModel.create(req.body);
+        // console.log("--> excursion id <--")
+        // console.log(excursionDoc._id)
+        // console.log("--> trip id <--")
+        // console.log(req.body.tripID)
+        // console.log("--> trip id from params <--")
+        // console.log(req.params.tripID)
+        res.redirect(`/trips/${req.body.tripID}`)
+    } catch(err) {
+        console.log(err)
+    }
 }
 
 

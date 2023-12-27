@@ -29,7 +29,7 @@ async function urlIDs (req, res, next) {
     const relTrip = await TripModel.findById(req.params.tripID)
     res.locals.relTrip = relTrip
     // console.log("all local variables")
-    // console.log(res.locals)
+    console.log(res.locals)
 
     // NOTE FOR SELF - COME BACK TO THIS ABOUT MAP TO LOCALS EASILY ALL AT ONCE
     next()
