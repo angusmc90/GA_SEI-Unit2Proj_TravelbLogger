@@ -1,3 +1,4 @@
+const TripModel = require("../models/trip");
 // will need to rename 
 // local or something idk
 

@@ -57,9 +57,8 @@ app.use(passport.session());
 // });
 
 // CHECKING MASYER AUTH CONTROLLER
-const bouncer = require('./controllers/bouncer.js')
-app.use(bouncer.user)
-app.use('/trips/:tripID', bouncer.urlIDs)
+const assignLocals = require('./controllers/locals.js')
+app.use(assignLocals.user)
 
 // printing local variables before moving onto routers
 app.use(function (req,res,next){
