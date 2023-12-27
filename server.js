@@ -59,6 +59,7 @@ app.use(passport.session());
 // CHECKING MASYER AUTH CONTROLLER
 const assignLocals = require('./controllers/locals.js')
 app.use(assignLocals.user)
+app.use("/trips/:tripID/excursions", assignLocals.urlIDs)
 
 // printing local variables before moving onto routers
 app.use(function (req,res,next){
