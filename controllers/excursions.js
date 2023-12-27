@@ -13,31 +13,28 @@ function newExcursion (req, res){
 }
 
 async function create (req, res) {
-    //-BEEF NOTE: Dec 13 2023
-    // Cannot for the life of me get the params of the trip ID to tie the excurion to the trip
-    // which is the whole point of this feature
-    //-BEEF NOTE Dec 20 2023
-    // https://github.com/expressjs/express/issues/3177
-    // note to self for pick up to look at the create fn in teh trips controller
-    // how was i able to assign req.user to a variable if the local vairables are alow available at the time of rendering?
-
     try{
-        const user = req.user; // Retrieve user object from request
+        // get user object from req (included in passport)
+        const user = req.user;
+        // assign user info to req obody
         req.body.user = user.name //COME BACK AND CHANGE THIS TO PROFILE NAME LATER
         req.body.userPFPic = user.avatar
         req.body.userID = user._id
-        // when ready to add photos - 
-        // req.body.coverShot = "https://i.imgur.com/wOm0coa.png"
-        // CONVERT "is fave" CHECKBOX TO BOOLEAN
+        // to be updated when when ready to add photos - 
+        req.body.coverShot = "https://i.imgur.com/wOm0coa.png"
+        // converting "reccomends" checkbos to boolean
         req.body.recommends = !!req.body.recommends
-        //CREATE DOC IN DATABASE
+        // create excursion doc in DB
         const excursionDoc = await ExcursionModel.create(req.body);
-        // console.log("--> excursion id <--")
-        // console.log(excursionDoc._id)
-        // console.log("--> trip id <--")
-        // console.log(req.body.tripID)
-        // console.log("--> trip id from params <--")
-        // console.log(req.params.tripID)
+        // find the trip the excursion belongs to
+        const parentTrip = await tripModel.findById(rreq.body.tripID)
+        // then add the cast members id to the movies cast array
+        // performerId comes from the name property on the form in the movies/show.ejs
+        parentTrip.excursions.push(excursionDoc._id)
+        
+        // then save it to the db
+        await parentTrip.save()
+
         res.redirect(`/trips/${req.body.tripID}`)
     } catch(err) {
         console.log(err)
