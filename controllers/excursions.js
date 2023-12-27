@@ -21,7 +21,7 @@ async function create (req, res) {
         req.body.userPFPic = user.avatar
         req.body.userID = user._id
         // to be updated when when ready to add photos - 
-        req.body.coverShot = "https://i.imgur.com/wOm0coa.png"
+        req.body.coverPic = "https://i.imgur.com/wOm0coa.png"
         // converting "reccomends" checkbos to boolean
         req.body.recommends = !!req.body.recommends
         // create excursion doc in DB

@@ -45,6 +45,27 @@
                                         <%= excursion.name %>
                                     </h3>
                                 </a>
+                                <div class="ticketBody">
+                                    <img src="<%= excursion.coverPic%>" class="tripPic">
+                                    <div class="tripPrev">
+                                        <!-- <div class="tripTaker">
+                                            <a href="/users/<%= excursion.userID %>">
+                                                <img src="<%= excursion.userPFPic %>" class="pfIcon">
+                                                <p>
+                                                    <%= excursion.user %>
+                                                </p>
+                                            </a> -->
+                                        </div>
+                                        <p>
+                                            <span class="tripLength">
+                                                <%= excursion.date %>
+                                            </span><br />
+                                            <span class="tripHighlight">
+                                                <%= excursion.highlights %>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
                             </ticket>
                             <% }) %>
 
