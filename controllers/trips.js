@@ -58,6 +58,7 @@ async function show (req, res){
     // console.log(res.locals)
     try {
         const tripDocument = await TripModel.findById(req.params.tripID)
+            .populate('excursions')
         // this method uses the /trips/:tripID path so thats is why tripID is accessible here
         res.render("trips/show", {tripDoc: tripDocument})
     } catch(err) {

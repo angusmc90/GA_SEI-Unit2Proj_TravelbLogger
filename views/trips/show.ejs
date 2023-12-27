@@ -36,6 +36,18 @@
                         <a href="/trips/<%= tripDoc._id %>/excursions/new">
                             <button>Add Excursion</button>
                         </a>
+
+
+                        <% tripDoc.excursions.forEach(excursion => { %>
+                            <ticket>
+                                <a href="#">
+                                    <h3 class="ticketTitle">
+                                        <%= excursion.name %>
+                                    </h3>
+                                </a>
+                            </ticket>
+                            <% }) %>
+
                     </div>
                 </article>
 
