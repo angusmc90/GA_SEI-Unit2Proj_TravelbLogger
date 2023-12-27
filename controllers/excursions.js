@@ -27,14 +27,12 @@ async function create (req, res) {
         // create excursion doc in DB
         const excursionDoc = await ExcursionModel.create(req.body);
         // find the trip the excursion belongs to
-        const parentTrip = await tripModel.findById(rreq.body.tripID)
-        // then add the cast members id to the movies cast array
-        // performerId comes from the name property on the form in the movies/show.ejs
+        const parentTrip = await TripModel.findById(req.body.tripID)
+        // add the excursion to array
         parentTrip.excursions.push(excursionDoc._id)
-        
-        // then save it to the db
+        // save to parentTrip
         await parentTrip.save()
-
+        // render the trip page
         res.redirect(`/trips/${req.body.tripID}`)
     } catch(err) {
         console.log(err)
