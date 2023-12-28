@@ -50,6 +50,24 @@
                             </div>
                         </div>
                     </ticket>
+
+
+                    <% userDoc.trips.forEach( trip => { %>
+                        <ticket class="sml">
+                            <h3 class="ticketTitle">
+                                <%= trip.tripName %>
+                            </h3>
+                            <div class="ticketBody">
+                                <img src="./images/tickets.png" class="tripPic">
+                                <div class="tripPrev">
+                                    <p>
+                                        <span class="tripLength"><%= trip.tripStart %> - <%= trip.tripEnd %></span><br />
+                                        <span class="tripHighlight"><%= trip.highlight %></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </ticket> 
+                    <% }) %>
                 </aside>
 
             </div>
