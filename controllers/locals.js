@@ -6,7 +6,8 @@ const TripModel = require("../models/trip");
 
 module.exports = {
   user,
-  urlIDs
+  urlIDs,
+  isLoggedIn
 }
 
 function user (req, res, next) {
@@ -34,3 +35,10 @@ async function urlIDs (req, res, next) {
     // NOTE FOR SELF - COME BACK TO THIS ABOUT MAP TO LOCALS EASILY ALL AT ONCE
     next()
   }
+
+function isLoggedIn(req, res, next) {
+    // Pass the req/res to the next middleware/route handler
+    if ( req.isAuthenticated() ) return next();
+    // Redirect to login if the user is not already logged in
+    res.redirect('/auth/google');
+    }
