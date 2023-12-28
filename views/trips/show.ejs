@@ -32,15 +32,17 @@
                         </div>
                     </div>
                     
-                    <% if (user._id === tripDoc.userID) { %>
+                    <% if (tripDoc.userID == user._id) { %>
                     <div id="tripUpdateBtns">
                         <a href="/trips/<%= tripDoc._id %>/excursions/new">
                             <button>Add Excursion</button>
                         </a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="#">
                             <button>Edit or Delete</button>
                         </a>
                     </div>
+                    <br/>
                     <% } %>
 
                     <div id="excusionList">

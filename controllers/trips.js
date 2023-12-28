@@ -1,3 +1,4 @@
+const UserModel = require("../models/user");
 const TripModel = require("../models/trip");
 
 module.exports ={
