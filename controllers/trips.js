@@ -28,26 +28,24 @@ function newTrip(req,res){
 
 async function create (req, res) {
     try{
-        // BEEF NOTE:
-        // CREATE ATTRIBUTES IN BODY TO CAPTURE USER INFO FOR UI
+        // create attributes in body to capture user info to include in trip document
         const user = req.user
         req.body.user = user.name //COME BACK AND CHANGE THIS TO PROFILE NAME LATER
         req.body.userPFPic = user.avatar
         req.body.userID = user._id
-        // when ready to add photos - 
-        // req.body.coverShot = "https://i.imgur.com/wOm0coa.png"
-        // CONVERT "is fave" CHECKBOX TO BOOLEAN
+        // when ready to add photos - req.body.coverShot = "https://i.imgur.com/wOm0coa.png"
+        // convert "is fave" checkbox to boolean
         req.body.favorite = !!req.body.favorite
-        //CREATE DOC IN DATABASE
+        // create doc in database
         const tripDoc = await TripModel.create(req.body);
-        // console.log(tripDoc)
-
-        // we need to add user details so we can see them in the trip and possible link to them
-        // then we need to push the tripDoc to the user doc
-        // user id does not need to be in the trips object
-
-        //GO BACK TO FEED
-        res.render('trips')
+        // find user document in database
+        const userDoc = await UserModel.findById(user._id)
+        // add tripDoc id to userDoc
+        userDoc.trips.push(tripDoc._id)
+        // save doc
+        await userDoc.save()
+        // go to trip page
+        res.redirect(`/trips/${tripDoc._id}`)
     } catch(err) {
         console.log(err)
     }
