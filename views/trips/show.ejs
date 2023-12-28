@@ -31,12 +31,20 @@
                             </p>
                         </div>
                     </div>
-                    <div id="excusionList">
-                        Excursions: |
+                    
+                    <% if (user._id === tripDoc.userID) { %>
+                    <div id="tripUpdateBtns">
                         <a href="/trips/<%= tripDoc._id %>/excursions/new">
                             <button>Add Excursion</button>
                         </a>
+                        <a href="#">
+                            <button>Edit or Delete</button>
+                        </a>
+                    </div>
+                    <% } %>
 
+                    <div id="excusionList">
+                        Excursions: |
 
                         <% tripDoc.excursions.forEach(excursion => { %>
                             <ticket>
