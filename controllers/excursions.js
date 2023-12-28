@@ -43,7 +43,7 @@ async function create (req, res) {
 async function show (req, res) {
     try {
         const excursionDocument = await ExcursionModel.findById(req.params.excursionID)
-        res.render("trips//excursions/show", { excursionDoc: excursionDocument })
+        res.render("trips/excursions/show", { excursionDoc: excursionDocument })
     } catch(err) {
         console.log(err)
     }   

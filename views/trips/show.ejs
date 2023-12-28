@@ -40,7 +40,7 @@
 
                         <% tripDoc.excursions.forEach(excursion => { %>
                             <ticket>
-                                <a href="#">
+                                <a href="/trips/<%= tripDoc._id %>/excursions/<%= excursion._id %>">
                                     <h3 class="ticketTitle">
                                         <%= excursion.name %>
                                     </h3>
