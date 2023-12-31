@@ -64,3 +64,8 @@ async function show (req, res){
         console.log(err)
     }
 }
+
+// for edit function, the link to the edit page will direct to a get
+// but the form method will be POST with a query string that labels it as a put
+// ?_method=
+// same query string to be used for delete
