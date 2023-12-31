@@ -1,12 +1,13 @@
 const router = require('express').Router();
 const passport = require('passport');
 const tripsCntrl = require('../controllers/trips')
+const assignLocals = require('../controllers/locals')
 
 // when the path below is called, execute the corresponding method functions defined in the controller
-router.get('/', tripsCntrl.index) // BEEF NOTE: Render the view of all trips
-router.get('/new', tripsCntrl.new) // BEEF NOTE: Render new trip form page
-router.post('/', tripsCntrl.create) // BEEF NOTE: Create new trip doc and render index page
-router.get('/:tripID', tripsCntrl.show) // BEEF NOTE: Render a specific trip page
+router.get('/', assignLocals.isLoggedIn, tripsCntrl.index) // BEEF NOTE: Render the view of all trips
+router.get('/new', assignLocals.isLoggedIn, tripsCntrl.new) // BEEF NOTE: Render new trip form page
+router.post('/', assignLocals.isLoggedIn, tripsCntrl.create) // BEEF NOTE: Create new trip doc and render index page
+router.get('/:tripID', assignLocals.isLoggedIn, tripsCntrl.show) // BEEF NOTE: Render a specific trip page
 
 module.exports = router;
 
