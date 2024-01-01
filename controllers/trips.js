@@ -87,23 +87,24 @@ async function edit (req, res) {
 
 async function update (req, res) {
     try {
-        // TESTING EXECUTION WORKS WITH BELOW CONSOLE
-        // note to self - use edit function to convert trip start and end for test docs, then remove those lines when done & cleaning up notes
-        console.log('put /:id redirect to /show')
-        // psuedo code notes
-        // take the request and break it into two objects
-        // one object (TRUEREQ?) for the fields to be updated w/o the trip ID included
-        
+// // TESTING EXECUTION WORKS WITH BELOW CONSOLE
+// // note to self - use edit function to convert trip start and end for test docs, then remove those lines when done & cleaning up notes
+// console.log('put /:id redirect to /show')
+        // break down req.body into:
         // a var for trip._id
-        
-        // find the trip doc via the id
-        
-        // update with the trueBody object
-
-        // save it?
-
-        // redirect through show route
-        // DONT FORGET to include the tripDocument in the redirect request
+        const tripID = req.body.thisTrip
+        // a new object from an array of KVPs
+        const trueReqObj = Object.fromEntries(
+            // break req.body into an array of KVPs
+            Object.entries(req.body)
+            // remove .thisTrip from req.body
+            .filter(([key]) => key !== 'thisTrip')
+        )
+        // findByIdAndUpdate the trip doc via the id and save
+        const updatedTrip = await UserModel.findByIdAndUpdate(tripID, trueReqObj)
+        .save()
+        // redirect through show route with trueReqObj
+        res.redirect('./show', { tripDoc : updatedTrip})
     } catch(err) {
         console.log(err)
     }
