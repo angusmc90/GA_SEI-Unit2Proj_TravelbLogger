@@ -70,12 +70,17 @@ async function edit (req, res) {
     try {
         // find the tripDoc you want to edit
         const tripDocument = await TripModel.findById(req.params.tripID)
-        // render the edit page form
+        // render the edit page form & pass along tripDoc for pre-populating the form
         res.render("trips/edit", {tripDoc: tripDocument})
     } catch(err) {
         console.log(err)
     }
 }
+// NOTES FOR FUTURE EDITS - we are not just using the new page and prepopulating
+// because the vision for the edit page is to have it look like the show page
+// with the ability to 'hide' comments and remove excursions from a trip all
+// in one view
+
 
 async function update (req, res) {
     try {
