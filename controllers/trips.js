@@ -5,7 +5,8 @@ module.exports ={
     index,
     new: newTrip,
     create,
-    show
+    show,
+    edit
 }
 
 async function index (req,res) {
@@ -67,7 +68,10 @@ async function show (req, res){
 
 async function edit (req, res) {
     try {
-        console.log('get trips/edit')
+        // find the tripDoc you want to edit
+        const tripDocument = await TripModel.findById(req.params.tripID)
+        // render the edit page form
+        res.render("trips/edit", {tripDoc: tripDocument})
     } catch(err) {
         console.log(err)
     }

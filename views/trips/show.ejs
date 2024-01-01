@@ -8,7 +8,7 @@
                     <h1>
                         <%= tripDoc.tripName %> 
                         <% if (tripDoc.userID == user._id) { %>
-                            <a href="./edit">EDIT</a>
+                            <a href="./edit/<%= tripDoc._id %>">EDIT</a>
                             <a href="#">DELETE</a>
                         <% } %>
                     </h1>
