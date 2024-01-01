@@ -6,7 +6,8 @@ module.exports ={
     new: newTrip,
     create,
     show,
-    edit
+    edit,
+    update
 }
 
 async function index (req,res) {
@@ -93,6 +94,11 @@ async function update (req, res) {
         // break down req.body into:
         // a var for trip._id
         const tripID = req.body.thisTrip
+        console.log("tripID in update function is - ")
+        console.log(tripID)
+        console.log("body.tripID in update function is - ")
+        console.log(req.body.thisTrip)
+
         // a new object from an array of KVPs
         const trueReqObj = Object.fromEntries(
             // break req.body into an array of KVPs
@@ -101,16 +107,13 @@ async function update (req, res) {
             .filter(([key]) => key !== 'thisTrip')
         )
         // findByIdAndUpdate the trip doc via the id and save
-        const updatedTrip = await UserModel.findByIdAndUpdate(tripID, trueReqObj)
-        .save()
-        // redirect through show route with trueReqObj
-        res.redirect('./show', { tripDoc : updatedTrip })
+        // .save isn't working? look up later why that isnt but new:true will?
+        await UserModel.findByIdAndUpdate(tripID, trueReqObj, { new: true})
+        // redirect through show route
+        // note to self that the object cannot be passed with redirect however
+        // bcause the redirect trips URL does not need to be passed with
+        res.redirect(`/trips/${tripID}`)
     } catch(err) {
         console.log(err)
     }
 }
-
-// for edit function, the link to the edit page will direct to a get
-// but the form method will be POST with a query string that labels it as a put
-// ?_method=
-// same query string to be used for delete
