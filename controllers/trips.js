@@ -65,6 +65,22 @@ async function show (req, res){
     }
 }
 
+async function edit (req, res) {
+    try {
+        console.log('get trips/edit')
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+async function update (req, res) {
+    try {
+        console.log('put /:id redirect to /show')
+    } catch(err) {
+        console.log(err)
+    }
+}
+
 // for edit function, the link to the edit page will direct to a get
 // but the form method will be POST with a query string that labels it as a put
 // ?_method=
