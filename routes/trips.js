@@ -9,6 +9,7 @@ router.get('/new', assignLocals.isLoggedIn, tripsCntrl.new) // Render new trip f
 router.post('/', assignLocals.isLoggedIn, tripsCntrl.create) // Create new trip doc and render index page
 router.get('/:tripID', assignLocals.isLoggedIn, tripsCntrl.show) // Render a specific trip page
 router.get('/edit/:tripID', assignLocals.isLoggedIn, tripsCntrl.edit) // Edit a specific page
+router.put('/:tripID', assignLocals.isLoggedIn, tripsCntrl.update) // Edit a specific page
 
 module.exports = router;
 

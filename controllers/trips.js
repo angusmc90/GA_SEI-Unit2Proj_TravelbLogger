@@ -104,7 +104,7 @@ async function update (req, res) {
         const updatedTrip = await UserModel.findByIdAndUpdate(tripID, trueReqObj)
         .save()
         // redirect through show route with trueReqObj
-        res.redirect('./show', { tripDoc : updatedTrip})
+        res.redirect('./show', { tripDoc : updatedTrip })
     } catch(err) {
         console.log(err)
     }
