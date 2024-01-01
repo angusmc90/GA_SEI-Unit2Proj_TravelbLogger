@@ -272,5 +272,6 @@ aside.tripComments{
 }
 
 img.modifyTripIcon{
-  max-width: 50px;
+  max-width: 25px;
+  max-height: 25px;
 }
