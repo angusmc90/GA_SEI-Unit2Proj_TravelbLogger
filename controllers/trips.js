@@ -38,6 +38,9 @@ async function create (req, res) {
         // when ready to add photos - req.body.coverShot = "https://i.imgur.com/wOm0coa.png"
         // convert "is fave" checkbox to boolean
         req.body.favorite = !!req.body.favorite
+        // convert tripStart & tripEnd to yyyy-MM-dd format
+        req.body.tripStart = req.body.tripStart.toISOString().slice(0, 10);
+        req.body.tripEnd = req.body.tripEnd.toISOString().slice(0, 10);
         // create doc in database
         const tripDoc = await TripModel.create(req.body);
         // find user document in database
