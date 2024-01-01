@@ -87,8 +87,23 @@ async function edit (req, res) {
 
 async function update (req, res) {
     try {
+        // TESTING EXECUTION WORKS WITH BELOW CONSOLE
         // note to self - use edit function to convert trip start and end for test docs, then remove those lines when done & cleaning up notes
         console.log('put /:id redirect to /show')
+        // psuedo code notes
+        // take the request and break it into two objects
+        // one object for the fields to be updated w/o the trip ID included
+        
+        // a var for trip._id
+        
+        // find the trip doc via the id
+        
+        // update with the trueBody object
+
+        // save it?
+
+        // redirect through show route
+        // DONT FORGET to include the tripDocument in the redirect request
     } catch(err) {
         console.log(err)
     }
