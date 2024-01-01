@@ -6,7 +6,11 @@
 
                 <article class="tripPg">
                     <h1>
-                        <%= tripDoc.tripName %>
+                        <%= tripDoc.tripName %> 
+                        <% if (req.user._id == tripDoc.userID) { %>
+                            <a href="./edit">EDIT</a>
+                            <a href="#">DELETE</a>
+                        <% } %>
                     </h1>
                     <div class="tripInfo">
                         <div class="tripPicLg">
