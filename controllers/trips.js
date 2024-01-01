@@ -92,7 +92,7 @@ async function update (req, res) {
         console.log('put /:id redirect to /show')
         // psuedo code notes
         // take the request and break it into two objects
-        // one object for the fields to be updated w/o the trip ID included
+        // one object (TRUEREQ?) for the fields to be updated w/o the trip ID included
         
         // a var for trip._id
         
