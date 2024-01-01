@@ -8,8 +8,8 @@
                     <h1>
                         <%= tripDoc.tripName %> 
                         <% if (tripDoc.userID == user._id) { %>
-                            <a href="./edit/<%= tripDoc._id %>"><img class="modifyTripIcon" src="/images/edit.png"></a>
-                            <a href="#"><img class="modifyTripIcon" src="/images/delete.png"></a>
+                            <a href="./edit/<%= tripDoc._id %>"><img class="modifyTripIcon" src="/images/btn-edit.png"></a>
+                            <a href="#"><img class="modifyTripIcon" src="/images/btn-delete.png"></a>
                         <% } %>
                     </h1>
                     <div class="tripInfo">
@@ -37,7 +37,7 @@
                     </div>
 
                     <div id="excusionList">
-                        Excursions:<% if (tripDoc.userID == user._id) { %> |  <a href="/trips/<%= tripDoc._id %>/excursions/new"><img class="modifyTripIcon" src="/images/addExcursion.png"></a><% } %><br>
+                        Excursions:<% if (tripDoc.userID == user._id) { %> |  <a href="/trips/<%= tripDoc._id %>/excursions/new"><img class="modifyTripIcon" src="/images/btn-addExcursion.png"></a><% } %><br>
 
                         <% tripDoc.excursions.forEach(excursion => { %>
                             <ticket>
