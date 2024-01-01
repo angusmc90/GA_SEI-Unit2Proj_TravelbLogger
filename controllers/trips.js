@@ -38,7 +38,7 @@ async function create (req, res) {
         // when ready to add photos - req.body.coverShot = "https://i.imgur.com/wOm0coa.png"
         // convert "is fave" checkbox to boolean
         req.body.favorite = !!req.body.favorite
-        // convert tripStart & tripEnd to yyyy-MM-dd format
+        // convert tripStart/End to yyyy-MM-dd format
         req.body.tripStart = req.body.tripStart.toISOString().slice(0, 10);
         req.body.tripEnd = req.body.tripEnd.toISOString().slice(0, 10);
         // create doc in database
@@ -87,6 +87,7 @@ async function edit (req, res) {
 
 async function update (req, res) {
     try {
+        // note to self - use edit function to convert trip start and end for test docs, then remove those lines when done & cleaning up notes
         console.log('put /:id redirect to /show')
     } catch(err) {
         console.log(err)
