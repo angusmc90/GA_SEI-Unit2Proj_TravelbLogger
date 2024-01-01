@@ -270,3 +270,7 @@ aside.tripComments{
   width:35%;
   background-color: brown
 }
+
+img.modifyTripIcon{
+  max-width: 50px;
+}
