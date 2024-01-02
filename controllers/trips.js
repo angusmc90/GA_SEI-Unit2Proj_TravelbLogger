@@ -101,6 +101,7 @@ async function update (req, res) {
         // turn tripStart & End strings into date objects
         trueReqObj.tripStart = new Date(req.body.tripStart)
         trueReqObj.tripEnd = new Date(req.body.tripEnd)
+        trueReqObj.favorite = !!req.body.favorite
         // findByIdAndUpdate the trip doc via the id and save
         // .save isn't working? look up later why that isnt but new:true will?
         await TripModel.findByIdAndUpdate(tripID, trueReqObj, { new: true})
