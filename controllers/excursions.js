@@ -48,3 +48,14 @@ async function show (req, res) {
         console.log(err)
     }   
 }
+
+async function edit (req, res) {
+    try {
+        // find the tripDoc you want to edit
+        const excursionDocument = await ExcursionModel.findById(req.params.excursionID)
+        // render the edit page form & pass along tripDoc for pre-populating the form
+        res.render("trips/excursions/edit", {excursionDoc: excursionDocument})
+    } catch(err) {
+        console.log(err)
+    }
+}
