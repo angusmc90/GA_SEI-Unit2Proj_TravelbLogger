@@ -98,6 +98,7 @@ async function update (req, res) {
             // remove .thisTrip from req.body
             .filter(([key]) => key !== 'thisTrip')
             )
+        // turn tripStart & End strings into date objects
         trueReqObj.tripStart = new Date(req.body.tripStart)
         trueReqObj.tripEnd = new Date(req.body.tripEnd)
         // findByIdAndUpdate the trip doc via the id and save
