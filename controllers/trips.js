@@ -88,27 +88,21 @@ async function edit (req, res) {
 
 async function update (req, res) {
     try {
-// // TESTING EXECUTION WORKS WITH BELOW CONSOLE
-// // note to self - use edit function to convert trip start and end for test docs, then remove those lines when done & cleaning up notes
-// console.log('put /:id redirect to /show')
-        // break down req.body into:
-        // a var for trip._id
+        // break down req.body into
+        // - a var for trip._id
         const tripID = req.body.thisTrip
-        console.log("tripID in update function is - ")
-        console.log(tripID)
-        console.log("body.tripID in update function is - ")
-        console.log(req.body.thisTrip)
-
-        // a new object from an array of KVPs
+        // - a new object from an array of KVPs
         const trueReqObj = Object.fromEntries(
-            // break req.body into an array of KVPs
-            Object.entries(req.body)
+        // break req.body into an array of KVPs
+        Object.entries(req.body)
             // remove .thisTrip from req.body
             .filter(([key]) => key !== 'thisTrip')
-        )
+            )
+        trueReqObj.tripStart = new Date(req.body.tripStart)
+        trueReqObj.tripEnd = new Date(req.body.tripEnd)
         // findByIdAndUpdate the trip doc via the id and save
         // .save isn't working? look up later why that isnt but new:true will?
-        await UserModel.findByIdAndUpdate(tripID, trueReqObj, { new: true})
+        await TripModel.findByIdAndUpdate(tripID, trueReqObj, { new: true})
         // redirect through show route
         // note to self that the object cannot be passed with redirect however
         // bcause the redirect trips URL does not need to be passed with
@@ -117,3 +111,9 @@ async function update (req, res) {
         console.log(err)
     }
 }
+    
+    
+
+
+
+
