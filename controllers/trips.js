@@ -1,7 +1,7 @@
 const UserModel = require("../models/user");
 const TripModel = require("../models/trip");
 
-module.exports ={
+module.exports = {
     index,
     new: newTrip,
     create,
@@ -12,11 +12,9 @@ module.exports ={
 
 async function index (req,res) {
     try{
-        // BEEF NOTE:
         // find all trip documents
         const tripDocuments = await TripModel.find({}).exec()
-        // BEEF NOTE: 
-        // seems .exec isnt needed? 
+        // note to self - seems .exec isnt needed? google later
         // render the trips index page with all of the trip documents found
         res.render('trips', {tripDocs: tripDocuments})
     } catch(err) {

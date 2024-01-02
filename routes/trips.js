@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const passport = require('passport');
 const tripsCntrl = require('../controllers/trips')
 const assignLocals = require('../controllers/locals')
 

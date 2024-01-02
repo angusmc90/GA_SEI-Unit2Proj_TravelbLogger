@@ -1,0 +1,35 @@
+// will not be able to change trip in this first pass - only the specific excursion doc
+// note to self about date add decision and 
+
+<%- include('../../partials/header') %>
+
+    <main>
+        <%- include('../../partials/nav') %>
+
+
+        <h2 class="formTitle">Add a memoriable moment form your <%= relTrip.tripName %> trip:</h2>
+        <form id="newTripForm" action="/trips/<%= relTrip._id %>/excursions/create" method="POST">
+            <!-- CHANGE ACTION ON THE ABOVE TO THE FULL URL REQUEST-->
+            <label>Excursion Name:</label><br/>
+            <input type="text" name="name" value="<%= excursionDoc.name %>"><br/>
+            <label>Date of:</label><br/>
+            <input type="date" name="date" value="<%= excursionDoc.date %>"><br/>
+            <label>About: Be sure to include links</label><br/>
+            <textarea name="about"> <%= excursionDoc.about %></textarea><br/>
+            <label>City:</label><br/>
+            <input type="text" name="city" value="<%= excursionDoc.city %>"><br/>
+            <label>Country:</label><br/>
+            <input type="text" name="country" value="<%= excursionDoc.country %>"><br/>
+            <label>Highlights / Summary:</label><br/>
+            <textarea name="highlights"> <%= excursionDoc.highlights %> </textarea><br/>
+            <label>Would you recommend this for others?</label><br/>
+            <input type="checkbox" name="recommends"><br/>
+
+            <!-- <input type="submit" value="Add Trip"> -->
+            <input type="submit" value="Save & Add Excursion">
+        </form>
+
+    </main>
+
+
+    <%- include('../../partials/footer') %>
