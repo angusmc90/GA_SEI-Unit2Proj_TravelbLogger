@@ -7,6 +7,7 @@ module.exports ={
     create,
     show,
     edit,
+    update
 }
 
 function newExcursion (req, res){

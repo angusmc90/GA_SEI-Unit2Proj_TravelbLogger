@@ -7,7 +7,7 @@
         <%- include('../../partials/nav') %>
 
 
-        <h2 class="formTitle">Add a memoriable moment form your <%= relTrip.tripName %> trip:</h2>
+        <h2 class="formTitle"> Update your <em><%= excursionDoc.name %></em> from your <em><%= relTrip.tripName %></em> trip:</h2>
         <form id="newTripForm" action="/trips/<%= relTrip._id %>/excursions/create" method="POST">
             <!-- CHANGE ACTION ON THE ABOVE TO THE FULL URL REQUEST-->
             <input type="hidden" name="relTrip" value ="<%= relTrip._id %>">
