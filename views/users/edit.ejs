@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+    <main>
+        <%- include('../partials/nav') %>
+            <h2 class="formTitle">Log Your Trip:</h2>
+            <form id="newTripForm" action="/trips/<%= tripDoc._id %>?method=PUT" method="POST">
+                <input type="hidden" name="thisTrip" value="<%= tripDoc._id %>"><br/>
+                <label>Trip Name:</label><br/>
+                <input type="text" name="tripName" value="<%= tripDoc.tripName %>"><br/>
+                <label>Trip Start:</label><br/>
+                <input type="date" name="tripStart" value="<%= tripDoc.tripStart %>"><br/>
+                <label>Trip End:</label><br/>
+                <input type="date" name="tripEnd" value="<%= tripDoc.tripEnd %>"><br/>
+                <label>Highlights / Summary:</label><br/>
+                <textarea name="highlight" ><%= tripDoc.highlight %></textarea><br/>
+                <label>Was this trip your favorite?</label><br/>
+                <input type="checkbox" name="favorite"><br/>
+
+                <input type="submit" value="Add Trip">
+                <!-- <input type="submit" value="Save & Add Excursion"> -->
+            </form>
+
+    </main>
+
+<%- include('../partials/footer') %>
