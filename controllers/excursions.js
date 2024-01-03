@@ -60,3 +60,31 @@ async function edit (req, res) {
         console.log(err)
     }
 }
+
+async function update (req, res) {
+    try {
+        // break down req.body into
+        // - a var for trip._id
+        const excursionID = req.body.thisExcursion
+        const tripID = req.body.relTrip
+        // - a new object from an array of KVPs
+        const trueReqObj = Object.fromEntries(
+        // break req.body into an array of KVPs
+        Object.entries(req.body)
+            // remove .thisTrip from req.body
+            .filter(([key]) => key !== 'thisExcur')
+            )
+        // turn tripStart & End strings into date objects
+        trueReqObj.date = new Date(req.body.date)
+        trueReqObj.recommends = !!req.body.recommends
+        // findByIdAndUpdate the trip doc via the id and save
+        // .save isn't working? look up later why that isnt but new:true will?
+        await ExcursionModel.findByIdAndUpdate(excursionID, trueReqObj, { new: true})
+        // redirect through show route
+        // note to self that the object cannot be passed with redirect however
+        // bcause the redirect trips URL does not need to be passed with
+        res.redirect(`/trips${tripID}/excursions/${excursionID}`)
+    } catch(err) {
+        console.log(err)
+    }
+}

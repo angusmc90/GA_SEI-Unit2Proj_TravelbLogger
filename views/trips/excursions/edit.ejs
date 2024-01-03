@@ -10,6 +10,8 @@
         <h2 class="formTitle">Add a memoriable moment form your <%= relTrip.tripName %> trip:</h2>
         <form id="newTripForm" action="/trips/<%= relTrip._id %>/excursions/create" method="POST">
             <!-- CHANGE ACTION ON THE ABOVE TO THE FULL URL REQUEST-->
+            <input type="hidden" name="relTrip" value ="<%= relTrip._id %>">
+            <input type="hidden" name="thisExcursion" value ="<%= excursionDoc._id %>">
             <label>Excursion Name:</label><br/>
             <input type="text" name="name" value="<%= excursionDoc.name %>"><br/>
             <label>Date of:</label><br/>
