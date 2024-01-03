@@ -84,7 +84,7 @@ async function update (req, res) {
         // redirect through show route
         // note to self that the object cannot be passed with redirect however
         // bcause the redirect trips URL does not need to be passed with
-        res.redirect(`/trips${tripID}/excursions/${excursionID}`)
+        res.redirect(`/trips/${tripID}/excursions/${excursionID}`)
     } catch(err) {
         console.log(err)
     }
