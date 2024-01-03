@@ -54,9 +54,11 @@
 
                     <% userDoc.trips.forEach( trip => { %>
                         <ticket class="sml">
-                            <h3 class="ticketTitle">
-                                <%= trip.tripName %>
-                            </h3>
+                            <a href="/trips/<%= trip._id %>">
+                                <h3 class="ticketTitle">
+                                    <%= trip.tripName %>
+                                </h3>
+                            </a>
                             <div class="ticketBody">
                                 <img src="./images/tickets.png" class="tripPic">
                                 <div class="tripPrev">
