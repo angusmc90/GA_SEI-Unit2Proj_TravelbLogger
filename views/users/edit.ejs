@@ -3,21 +3,24 @@
     <main>
         <%- include('../partials/nav') %>
             <h2 class="formTitle">Log Your Trip:</h2>
-            <form id="newTripForm" action="/trips/<%= tripDoc._id %>?method=PUT" method="POST">
-                <input type="hidden" name="thisTrip" value="<%= tripDoc._id %>"><br/>
-                <label>Trip Name:</label><br/>
-                <input type="text" name="tripName" value="<%= tripDoc.tripName %>"><br/>
-                <label>Trip Start:</label><br/>
-                <input type="date" name="tripStart" value="<%= tripDoc.tripStart %>"><br/>
-                <label>Trip End:</label><br/>
-                <input type="date" name="tripEnd" value="<%= tripDoc.tripEnd %>"><br/>
-                <label>Highlights / Summary:</label><br/>
-                <textarea name="highlight" ><%= tripDoc.highlight %></textarea><br/>
-                <label>Was this trip your favorite?</label><br/>
-                <input type="checkbox" name="favorite"><br/>
+            <form id="userForm" action=#?method=PUT" method="POST">
+<!-- there are so many features I want to add to the user pages omg -->
+                <label>Profile Name</label><br/>
+                <input><br/>
+                <label>First Name</label><br/>
+                <input><br/>
+                <label>Last Name:</label><br/>
+                <input><br/>
+                <label>Hometown (City, State)</label><br/>
+                <input><br/>
+                <label>Favorite Trip</label><br/>
+                <input><br/>
+                <label>Favorite Excursion</label><br/>
+                <input><br/>
+                <label>Bucket List Trips</label><br/>
+                <input><br/>
 
-                <input type="submit" value="Add Trip">
-                <!-- <input type="submit" value="Save & Add Excursion"> -->
+                <input type="submit" value="Update Profile">
             </form>
 
     </main>
