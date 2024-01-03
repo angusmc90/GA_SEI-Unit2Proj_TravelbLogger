@@ -9,5 +9,6 @@ router.get('/new', assignLocals.isLoggedIn, excursionsCntrl.new) // BEEF NOTE: n
 router.post('/create', assignLocals.isLoggedIn, excursionsCntrl.create) // BEEF NOTE: create new excursion doc
 router.get('/:excursionID', assignLocals.isLoggedIn, excursionsCntrl.show) // BEEF NOTE: render an excursion page
 router.get('/edit/:excursionID', assignLocals.isLoggedIn, excursionsCntrl.edit) // BEEF NOTE: render a page to edit excursion page
+router.post('/:excursionID', assignLocals.isLoggedIn, excursionsCntrl.update) // BEEF NOTE: render an excursion page
 
 module.exports = router;
