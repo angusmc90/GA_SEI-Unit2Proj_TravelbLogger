@@ -7,6 +7,14 @@
                 <%= excursionDoc.name %><br/>
                 <%= excursionDoc.tripName %><br/>
                 <%= excursionDoc.country %><br/>
+                <br/>
+                <% if (excursionDoc.userID == user._id) { %>
+                    <div style="background-color: chartreuse; color: #ffffff;">
+                        <a href="./edit/<%= excursionDoc._id %>">[edit <img class="modifyTripIcon" src="/images/btn-edit.png">]</a>
+                        &nbsp;|&nbsp;
+                        <a href="#">[delete <img class="modifyTripIcon" src="/images/btn-delete.png">]</a>
+                    </div>
+                <% } %>
                 
               
 
