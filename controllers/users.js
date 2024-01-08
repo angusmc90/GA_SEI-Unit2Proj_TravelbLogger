@@ -1,7 +1,8 @@
 const UserModel = require("../models/user");
 
 module.exports ={
-    show
+    show,
+    edit,
 }
 
 async function show (req, res){
@@ -13,6 +14,14 @@ async function show (req, res){
         .populate('trips')
         // render the user profile page
         res.render("users/show", {userDoc: userDocument})
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+async function edit (req, res) {
+    try {
+        console.log("edit user controller")
     } catch(err) {
         console.log(err)
     }
