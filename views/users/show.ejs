@@ -8,7 +8,7 @@
                     <h1>
                         <%= userDoc._id %> <br/> <%= user._id %> <br/>
                         <%= userDoc.profileName %>
-                        <% if (userDoc._id == user._id) { %>
+                        <% if (user._id.equals(userDoc._id)) { %>
                             <a href="/users/<%= userDoc._id %>/edit">[edit <img class="modifyTripIcon" src="/images/btn-edit.png">]</a>
                             &nbsp;|&nbsp;
                             <a href="#">[delete <img class="modifyTripIcon" src="/images/btn-delete.png">]</a>
