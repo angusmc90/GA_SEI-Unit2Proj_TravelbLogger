@@ -3,6 +3,7 @@ const UserModel = require("../models/user");
 module.exports ={
     show,
     edit,
+    update,
 }
 
 async function show (req, res){
@@ -26,6 +27,14 @@ async function edit (req, res) {
         // render the edit page
         res.render("users/edit", { userDoc: userDocument })
     } catch(err) {
+        console.log(err)
+    }
+}
+
+async function update (req, res) {
+    try {
+        console.log('user update controller')
+    } catch(err){
         console.log(err)
     }
 }
