@@ -1,3 +1,8 @@
+// BRANCHES:
+// Git branches are per feature
+// Going forward, have two branches (for the "features" left)
+// Edit, CSS, maybe GA's MVP for GA?
+
 // load the env consts
 require('dotenv').config();
 const express = require('express');
