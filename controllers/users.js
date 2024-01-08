@@ -21,7 +21,10 @@ async function show (req, res){
 
 async function edit (req, res) {
     try {
-        console.log("edit user controller")
+        // find the user document
+        const userDocument = await UserModel.findById(req.params.userID)
+        // render the edit page
+        res.render("users/edit", { userDoc: userDocument })
     } catch(err) {
         console.log(err)
     }
