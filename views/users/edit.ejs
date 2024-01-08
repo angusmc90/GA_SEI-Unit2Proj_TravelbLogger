@@ -3,21 +3,21 @@
     <main>
         <%- include('../partials/nav') %>
             <h2 class="formTitle">Log Your Trip:</h2>
-            <form id="userForm" action="users/<%= res.params.userID %>?method=PUT" method="POST">
+            <form id="userForm" action="users/<%= userDoc._id %>?method=PUT" method="POST">
                 <label>Profile Name</label><br/>
-                <input name="profileName" value="<%= userDoc.profileName %>"><%= userDoc.######### %><br/>
+                <input name="profileName" value="<%= userDoc.profileName %>"><br/>
                 <label>First Name</label><br/>
-                <input name="firstName" value="<%= userDoc.firstName %>"><%= userDoc.######### %><br/>
+                <input name="firstName" value="<%= userDoc.firstName %>"><br/>
                 <label>Last Name:</label><br/>
-                <input name="lastName" value="<%= userDoc.lastName %>"><%= userDoc.######### %><br/>
+                <input name="lastName" value="<%= userDoc.lastName %>"><br/>
                 <label>Hometown</label><br/>
-                <input name="hometown" value="<%= userDoc.hometown %>"><%= userDoc.######### %><br/>
+                <input name="hometown" value="<%= userDoc.hometown %>"><br/>
                 <label>Favorite Trip</label><br/>
-                <input name="faveTrip" value="<%= userDoc.faveTrip %>"><%= userDoc.######### %><br/>
+                <input name="faveTrip" value="<%= userDoc.faveTrip %>"><br/>
                 <label>Favorite Excursion</label><br/>
-                <input name="faveExcursion" value="<%= userDoc.faveExcrusion %>"><%= userDoc.######### %><br/>
+                <input name="faveExcursion" value="<%= userDoc.faveExcrusion %>"><br/>
                 <label >Bucket List Trips</label><br/>
-                <input name="bucketList" value="<%= userDoc.bucketList %>"><%= userDoc.######### %><br/>
+                <input name="bucketList" value="<%= userDoc.bucketList %>"><br/>
 
                 <input type="submit" value="Update Profile">
             </form>
