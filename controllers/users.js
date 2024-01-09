@@ -26,10 +26,6 @@ async function edit (req, res) {
         const userID = req.params.userID
         // find the user document
         const userDocument = await UserModel.findById(userID)
-        .populate('trips')
-        // find excursions the user took
-        const excursions = await ExcursionModel.find({ userID: userID })
-        userDodument.excursions = excursions
         // render the edit page
         res.render("users/edit", { userDoc: userDocument })
     } catch(err) {
@@ -40,7 +36,7 @@ async function edit (req, res) {
 async function update (req, res) {
     try {
         console.log('user update controller')
-    } catch(err){
+    } catch(err) {
         console.log(err)
     }
 }
