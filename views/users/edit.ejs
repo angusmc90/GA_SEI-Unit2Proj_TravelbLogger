@@ -3,7 +3,7 @@
     <main>
         <%- include('../partials/nav') %>
             <h2 class="formTitle">Log Your Trip:</h2>
-            <form id="userForm" action="users/<%= userDoc._id %>?method=PUT" method="POST">
+            <form id="userForm" action="/users/<%= userDoc._id %>?method=PUT" method="POST">
                 <label>Profile Name</label><br/>
                 <input name="profileName" value="<%= userDoc.profileName %>"><br/>
                 <label>First Name</label><br/>
