@@ -1,5 +1,4 @@
 const UserModel = require("../models/user");
-const ExcursionModel = require("../models/excursion");
 
 module.exports ={
     show,
@@ -35,7 +34,11 @@ async function edit (req, res) {
 
 async function update (req, res) {
     try {
-        console.log('user update controller')
+        // grab the user id
+        const userID = req.params.userID
+        // find by id and update
+        await UserModel.findByIdAndUpdate(userID, req.body)
+        res.redirect(`/users/${userID}`)
     } catch(err) {
         console.log(err)
     }
